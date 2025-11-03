@@ -10,7 +10,8 @@ genai.configure(api_key=settings.gemini_api_key)
 
 class GeminiService:
     def __init__(self):
-        self.model = genai.GenerativeModel('gemini-pro')
+        # Use the latest available Gemini model
+        self.model = genai.GenerativeModel('gemini-2.5-flash')
     
     def generate_recipe(
         self,
