@@ -22,7 +22,7 @@ Before deploying, you need to set your Gemini API key:
 1. In the Blueprint setup, find the **cookgenie-backend** service
 2. Add the environment variable:
    - Key: `GEMINI_API_KEY`
-   - Value: `AIzaSyDxCaCPqNazjuOOaUzAyvD8SbUERLKsMR8`
+   - Value: `Key`
 
 ### 4. Deploy
 1. Click **"Apply"** to start deployment
