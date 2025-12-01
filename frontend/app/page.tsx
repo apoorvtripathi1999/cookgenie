@@ -90,7 +90,7 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              {expiryAlerts.slice(0, 5).map((alert) => (
+              {expiryAlerts.slice(0, 5).map((alert: ExpiryAlert) => (
                 <div
                   key={alert.item.id}
                   className="flex items-center justify-between p-3 bg-orange-50 rounded-lg"

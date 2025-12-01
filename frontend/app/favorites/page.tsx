@@ -89,7 +89,7 @@ export default function FavoritesPage() {
         </Card>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {favorites.map((favorite) => (
+          {favorites.map((favorite: RecipeFavorite) => (
             <RecipeCard
               key={favorite.id}
               recipe={{ ...favorite.recipe, is_favorite: true }}

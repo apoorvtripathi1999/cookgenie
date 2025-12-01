@@ -143,7 +143,7 @@ export default function SettingsPage() {
     const current = preferenceForm[type] as string[];
     setPreferenceForm({
       ...preferenceForm,
-      [type]: current.filter((item) => item !== value),
+      [type]: current.filter((item: string) => item !== value),
     });
   };
 
@@ -221,7 +221,7 @@ export default function SettingsPage() {
               </Button>
             </div>
             <div className="flex flex-wrap gap-2">
-              {preferenceForm.dietary_restrictions.map((item) => (
+              {preferenceForm.dietary_restrictions.map((item: string) => (
                 <Badge key={item} variant="default">
                   {item}
                   <button
@@ -252,7 +252,7 @@ export default function SettingsPage() {
               </Button>
             </div>
             <div className="flex flex-wrap gap-2">
-              {preferenceForm.preferred_cuisines.map((item) => (
+              {preferenceForm.preferred_cuisines.map((item: string) => (
                 <Badge key={item} variant="info">
                   {item}
                   <button
@@ -283,7 +283,7 @@ export default function SettingsPage() {
               </Button>
             </div>
             <div className="flex flex-wrap gap-2">
-              {preferenceForm.disliked_ingredients.map((item) => (
+              {preferenceForm.disliked_ingredients.map((item: string) => (
                 <Badge key={item} variant="danger">
                   {item}
                   <button
@@ -314,7 +314,7 @@ export default function SettingsPage() {
               </Button>
             </div>
             <div className="flex flex-wrap gap-2">
-              {preferenceForm.available_utensils.map((item) => (
+              {preferenceForm.available_utensils.map((item: string) => (
                 <Badge key={item} variant="success">
                   {item}
                   <button
@@ -350,7 +350,7 @@ export default function SettingsPage() {
                   setPreferenceForm({ ...preferenceForm, skill_level: e.target.value })
                 }
               >
-                {skillOptions.map((option) => (
+                {skillOptions.map((option: string) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>

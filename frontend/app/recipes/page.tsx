@@ -77,8 +77,8 @@ export default function RecipesPage() {
       // Get available ingredients
       const inventoryRes = await inventoryAPI.getByProfile(profile.id);
       const ingredients = inventoryRes.data
-        .filter((item) => item.quantity > 0)
-        .map((item) => item.name);
+        .filter((item: any) => item.quantity > 0)
+        .map((item: any) => item.name);
 
       if (ingredients.length === 0) {
         toast.error('Please add some ingredients to your inventory first!');
@@ -197,7 +197,7 @@ export default function RecipesPage() {
         </Card>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recipes.map((recipe) => (
+          {recipes.map((recipe: Recipe) => (
             <RecipeCard
               key={recipe.id}
               recipe={recipe}
