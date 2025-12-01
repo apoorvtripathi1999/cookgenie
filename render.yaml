@@ -32,7 +32,4 @@ services:
     plan: free
     envVars:
       - key: NEXT_PUBLIC_API_URL
-        fromService:
-          type: web
-          name: cookgenie-backend
-          property: host
+        value: https://cookgenie-backend.onrender.com
