@@ -125,41 +125,47 @@ export default function DashboardPage() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <Card hover className="cursor-pointer" onClick={() => router.push('/inventory')}>
-          <CardContent className="flex items-center space-x-4 pt-6">
-            <div className="bg-blue-100 p-3 rounded-lg">
-              <Package className="w-8 h-8 text-blue-600" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-600">Inventory Items</p>
-              <p className="text-2xl font-bold text-gray-900">{inventoryCount}</p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="cursor-pointer" onClick={() => router.push('/inventory')}>
+          <Card hover>
+            <CardContent className="flex items-center space-x-4 pt-6">
+              <div className="bg-blue-100 p-3 rounded-lg">
+                <Package className="w-8 h-8 text-blue-600" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600">Inventory Items</p>
+                <p className="text-2xl font-bold text-gray-900">{inventoryCount}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
-        <Card hover className="cursor-pointer" onClick={() => router.push('/recipes')}>
-          <CardContent className="flex items-center space-x-4 pt-6">
-            <div className="bg-green-100 p-3 rounded-lg">
-              <ChefHat className="w-8 h-8 text-green-600" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-600">Total Recipes</p>
-              <p className="text-2xl font-bold text-gray-900">{recipeCount}</p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="cursor-pointer" onClick={() => router.push('/recipes')}>
+          <Card hover>
+            <CardContent className="flex items-center space-x-4 pt-6">
+              <div className="bg-green-100 p-3 rounded-lg">
+                <ChefHat className="w-8 h-8 text-green-600" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600">Total Recipes</p>
+                <p className="text-2xl font-bold text-gray-900">{recipeCount}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
-        <Card hover className="cursor-pointer" onClick={() => router.push('/favorites')}>
-          <CardContent className="flex items-center space-x-4 pt-6">
-            <div className="bg-red-100 p-3 rounded-lg">
-              <Heart className="w-8 h-8 text-red-600" />
-            </div>
-            <div>
-              <p className="text-sm text-gray-600">Favorite Recipes</p>
-              <p className="text-2xl font-bold text-gray-900">{favoriteCount}</p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="cursor-pointer" onClick={() => router.push('/favorites')}>
+          <Card hover>
+            <CardContent className="flex items-center space-x-4 pt-6">
+              <div className="bg-red-100 p-3 rounded-lg">
+                <Heart className="w-8 h-8 text-red-600" />
+              </div>
+              <div>
+                <p className="text-sm text-gray-600">Favorite Recipes</p>
+                <p className="text-2xl font-bold text-gray-900">{favoriteCount}</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
 
       {/* Quick Actions */}
