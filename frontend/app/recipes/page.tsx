@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Sparkles } from 'lucide-react';
 import Button from '@/components/ui/Button';
@@ -14,7 +14,7 @@ import { profileAPI, recipeAPI, inventoryAPI, preferenceAPI } from '@/lib/api';
 import { Recipe, Profile, UserPreference } from '@/lib/types';
 import toast from 'react-hot-toast';
 
-export default function RecipesPage() {
+function RecipesContent() {
   const searchParams = useSearchParams();
   const shouldGenerate = searchParams.get('generate') === 'true';
 
@@ -275,6 +275,18 @@ export default function RecipesPage() {
         {selectedRecipe && <RecipeDetail recipe={selectedRecipe} />}
       </Modal>
     </div>
+  );
+}
+
+export default function RecipesPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      </div>
+    }>
+      <RecipesContent />
+    </Suspense>
   );
 }
 
