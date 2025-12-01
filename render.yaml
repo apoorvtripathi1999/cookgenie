@@ -1,15 +1,10 @@
-services:
-  # PostgreSQL Database
-  - type: pserv
-    name: cookgenie-db
-    env: docker
+databases:
+  - name: cookgenie-db
+    databaseName: cookgenie_db
+    user: cookgenie
     plan: free
-    region: oregon
-    databases:
-      - name: cookgenie_db
-        databaseName: cookgenie_db
-        user: cookgenie
 
+services:
   # FastAPI Backend
   - type: web
     name: cookgenie-backend
@@ -17,7 +12,6 @@ services:
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
     plan: free
-    region: oregon
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -36,7 +30,6 @@ services:
     dockerfilePath: ./frontend/Dockerfile
     dockerContext: ./frontend
     plan: free
-    region: oregon
     envVars:
       - key: NEXT_PUBLIC_API_URL
         fromService:
