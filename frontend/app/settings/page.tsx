@@ -350,7 +350,7 @@ export default function SettingsPage() {
                   setPreferenceForm({ ...preferenceForm, skill_level: e.target.value })
                 }
               >
-                {skillOptions.map((option: string) => (
+                {skillOptions.map((option: { value: string; label: string }) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
